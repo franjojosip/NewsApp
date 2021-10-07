@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+
+        <variable
+            name="onNavigateClick"
+            type="hr.fjjukic.common.contracts.OnNavigateClick" />
+
+        <variable
+            name="data"
+            type="hr.fjjukic.common.enums.IndexViewHolderType.ArticleUI" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->onNavigateClick.navigateToArticle(data.articleId)}"
+        app:cardBackgroundColor="@color/card_background"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="5dp">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            style="@style/text_margin_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_index_article"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/index_article_image"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                app:imageUrl="@{data.imageUrl}" />
+
+            <TextView
+                android:id="@+id/tv_index_article_category"
+                backgroundShape="@{data.category.color}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="8dp"
+                android:layout_toEndOf="@+id/iv_index_article"
+                android:padding="5dp"
+                android:text="@{data.category.name}"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_index_article_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tv_index_article_category"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/iv_index_article"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_slab_bold"
+                android:maxLines="4"
+                android:singleLine="false"
+                android:text="@{data.title}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/iv_index_article"
+                android:background="@color/background" />
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

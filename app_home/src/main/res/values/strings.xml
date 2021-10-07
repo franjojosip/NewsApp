@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">App_Home</string>
+    <string name="required_listener">Potreban %s listener</string>
+</resources>

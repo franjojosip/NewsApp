@@ -1,0 +1,32 @@
+apply from: '../dependencies.gradle'
+apply plugin: plugin_lib
+apply plugin: plugin_kotlin
+apply plugin: plugin_kotlin_kapt
+apply plugin: plugin_safe_args
+
+android {
+    compileSdkVersion compileVersion
+    buildToolsVersion toolVersion
+    defaultConfig {
+        minSdkVersion minTarget
+        targetSdkVersion targetVersion
+    }
+    compileOptions {
+        sourceCompatibility = java_compatibility
+        targetCompatibility = java_compatibility
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(":app_common")
+
+    api koin
+    api koinViewModel
+    api constraintLayout
+    api dotsIndicator
+
+    kapt kapt_epoxy
+}

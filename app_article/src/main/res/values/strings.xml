@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">app_article</string>
+    <string name="shares">15</string>
+    <string name="time_icon">Time icon</string>
+    <string name="shares_icon">Shares_icon</string>
+    <string name="article_image">Article image</string>
+    <string name="required_listener">Potreban %s listener</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="top_menu">#4a4a4a</color>
+    <color name="index_tab_active">#f4f4f4</color>
+    <color name="index_tab_inactive">#979797</color>
+</resources>

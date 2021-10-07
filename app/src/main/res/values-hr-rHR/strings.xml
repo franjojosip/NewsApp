@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vijesti</string>
+    <string name="tab_newest">Najnovije</string>
+    <string name="tab_most_read">Najčitanije</string>
+</resources>

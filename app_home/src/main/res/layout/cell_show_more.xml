@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="onNavigateClick"
+            type="hr.fjjukic.common.contracts.OnNavigateClick" />
+        <variable
+            name="categoryId"
+            type="Integer" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/RoundedBottomCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        app:cardElevation="5dp">
+
+        <Button
+            android:id="@+id/btn_show_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/show_more_button_background"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:text="@string/show_more"
+            app:backgroundTint="@null"
+            android:onClick="@{()->onNavigateClick.navigateToCategory(categoryId)}"/>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

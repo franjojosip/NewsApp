@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Vijesti</string>
+    <string name="tab_newest">Najnovije</string>
+    <string name="tab_most_read">Najčitanije</string>
+</resources>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="data"
+            type="hr.fjjukic.common.enums.ArticleViewHolderType.ArticleDescriptionUI" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            style="@style/text_margin_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/tv_description_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_slab_bold"
+                android:maxLines="3"
+                android:singleLine="false"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:text="@{data.title}"/>
+
+            <TextView
+                android:id="@+id/tv_description_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_description_title"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_slab_bold"
+                android:maxLines="3"
+                android:singleLine="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:text="@{data.subtitle}"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_description_author"
+                style="@style/text_margin_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_description_subtitle"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="@{data.articleInfoUI.author}"
+                android:textColor="@color/published"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_description_published"
+                style="@style/text_margin_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_description_subtitle"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/tv_description_author"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="@{data.articleInfoUI.published}"
+                android:textColor="@color/published"
+                android:textSize="13sp" />
+
+
+            <ImageView
+                android:id="@+id/iv_description_shares"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/tv_description_subtitle"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/ic_baseline_share_24"
+                android:contentDescription="@string/shares_icon" />
+
+            <TextView
+                android:id="@+id/tv_description_shares"
+                style="@style/text_margin_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_description_subtitle"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toLeftOf="@+id/iv_description_shares"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="@{data.articleInfoUI.num_of_shares}"
+                android:textColor="@color/published"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

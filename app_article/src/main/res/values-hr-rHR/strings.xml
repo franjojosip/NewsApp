@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">app_article</string>
+    <string name="shares">15</string>
+    <string name="time_icon">Ikona vrijeme</string>
+    <string name="shares_icon">Ikona podijeli</string>
+    <string name="article_image">Slika članka</string>
+    <string name="required_listener">Potreban %s listener</string>
+</resources>

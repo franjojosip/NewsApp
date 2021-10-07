@@ -1,0 +1,87 @@
+apply from: "../dependencies.gradle"
+apply from: "../signing.gradle"
+apply plugin: plugin_app
+apply plugin: plugin_kotlin
+apply plugin: plugin_kotlin_kapt
+
+android {
+    compileSdkVersion compileVersion
+    buildToolsVersion toolVersion
+    flavorDimensions "environment"
+    defaultConfig {
+        applicationId application_id
+        minSdkVersion minTarget
+        targetSdkVersion targetVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    def signingProperties = secretProperties()
+    signingConfigs {
+        release {
+            storeFile file("../android-signing-keystore.jks")
+            storePassword "${signingProperties.KEYSTORE_PASSWORD}"
+            keyAlias "${signingProperties.KEY_ALIAS}"
+            keyPassword "${signingProperties.KEY_PASSWORD}"
+        }
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", "API_URL", '"https://www.test.com/api/"'
+            minifyEnabled false
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+        }
+        release {
+            buildConfigField "String", "API_URL", '"https://www.test.com/api/"'
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    productFlavors {
+        prod {
+            buildConfigField "String", "API_URL", '"https://www.test.com/api/"'
+            dimension "environment"
+        }
+        store {
+            buildConfigField "String", "API_URL", '"https://www.test.com/api/"'
+            dimension "environment"
+        }
+        dev {
+            buildConfigField "String", "API_URL", '"https://www.test.com/api/"'
+            dimension "environment"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = java_compatibility
+        targetCompatibility = java_compatibility
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //app modules
+    implementation project(":app_common")
+    implementation project(":app_home")
+    implementation project(":app_category")
+    implementation project(":app_article")
+    implementation project(":app_menu")
+
+    // app dependencies
+    implementation okhttp_logging
+    implementation google_gson
+    implementation retrofit
+    implementation retrofitGSONConverter
+    implementation retrofitRxJavaAdapter
+    implementation design_materials
+}

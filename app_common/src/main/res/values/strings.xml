@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">app_common</string>
+    <string name="data_loading">Loading data…</string>
+    <string name="header">Naslov</string>
+    <string name="show_more">Svi članci</string>
+    <string name="title">Naslov</string>
+    <string name="random_title">NBA legenda tvrdi: LeBron je bolji od Džordana</string>
+    <string name="error">Pogreška</string>
+    <string name="error_message">Ups, dogodila se pogreška.</string>
+    <string name="positive">UREDU</string>
+    <string name="index_article_image">Slika početne stranice</string>
+    <string name="tab_newest">Najnovije</string>
+    <string name="tab_most_read">Najčitanije</string>
+    <string name="article_image">Article image</string>
+    <string name="time_icon">Time icon</string>
+    <string name="shares_icon">Shares icon</string>
+    <string name="category_article_share_icon">Category article share icon</string>
+</resources>

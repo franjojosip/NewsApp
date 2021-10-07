@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App_Home</string>
+    <string name="header">Naslov</string>
+    <string name="show_more">Svi članci</string>
+    <string name="title">Naslov</string>
+    <string name="random_title">NBA legenda tvrdi: LeBron je bolji od Džordana</string>
+    <string name="error">Pogreška</string>
+    <string name="error_message">Ups, dogodila se pogreška.</string>
+    <string name="positive">UREDU</string>
+    <string name="index_article_image">Slika prve stranice</string>
+    <string name="required_listener">Potreban %s listener</string>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/white"
+            app:tabBackground="@drawable/tab_indicator_color"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/red"
+            app:tabIndicatorHeight="4.5dp"
+            app:tabMaxWidth="0dp"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/black"
+            app:tabTextAppearance="@style/text_appereance_tab"
+            app:tabTextColor="@color/tab_text">
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <hr.fjjukic.common.viewpager.CustomViewPager
+            android:id="@+id/categoryViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tabLayout"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </RelativeLayout>
+</layout>

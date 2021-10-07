@@ -1,0 +1,48 @@
+apply from : '../dependencies.gradle'
+apply plugin: plugin_lib
+apply plugin: plugin_kotlin
+apply plugin: plugin_kotlin_kapt
+
+android {
+    compileSdkVersion compileVersion
+    buildToolsVersion toolVersion
+    defaultConfig {
+        minSdkVersion minTarget
+        targetSdkVersion targetVersion
+    }
+    compileOptions {
+        sourceCompatibility = java_compatibility
+        targetCompatibility = java_compatibility
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api koin
+    api google_gson
+    api koinViewModel
+    api navigationComponentFragment
+    api navigationComponentNavigationUI
+    api constraintLayout
+    api swipeRefreshLayout
+
+    api epoxy
+    api epoxy_annotations
+    api epoxy_databinding
+    kapt kapt_epoxy
+
+    api retrofit
+    api retrofitGSONConverter
+    api retrofitRxJavaAdapter
+
+    api rxJava
+    api rxAndroid
+    api rxKotlin
+    api rxBindings
+
+    api epoxy_glide
+    api androidMaterial
+    api design_materials
+}

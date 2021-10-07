@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App_Category</string>
+    <string name="tab_newest">Najnovije</string>
+    <string name="tab_most_read">Najčitanije</string>
+    <string name="favorits">Favoriti</string>
+    <string name="category_article_share_icon">Ikona za djeljenje</string>
+    <string name="required_listener">Potreban %s listener</string>
+</resources>

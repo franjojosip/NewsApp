@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_home"
+    app:startDestination="@id/indexFragment">
+    <fragment
+        android:id="@+id/indexFragment"
+        android:name="ht.fjjukic.home.view.IndexFragment">
+        <action
+            android:id="@+id/action_navigate_to_article"
+            app:destination="@id/navigation_article">
+            <argument
+                android:name="articleId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+</navigation>
